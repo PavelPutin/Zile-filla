@@ -1,0 +1,32 @@
+@startuml Server class diagram of Zile filla
+
+title
+Концептуальная диаграмма классов серверной части Zile filla
+end title
+
+package controller {
+    class FileSystemController
+    note right of FileSystemController : Предоставляет методы взаимодействия\nс файловой системе
+
+    class FileReaderController
+    note right of FileReaderController: Предоставляет методы для чтения\nсодержимого файлов
+}
+
+package service {
+    class FileSystemService
+    note right of FileSystemService: Предоставляет доступ к файловой системе\nсогласно установленным ограничениям
+
+    class TxtReaderService
+    note right of TxtReaderService: Предоставляет доступ к файловой системе\nсогласно установленным ограничениям
+}
+
+package filesystem_access {
+    class FileSystemApi
+    note right of FileSystemApi: Предоставляет методы\nдля работы с файловой системой
+}
+
+FileSystemController -- FileSystemService
+FileReaderController -- TxtReaderService
+FileSystemService -- FileSystemApi
+TxtReaderService -- FileSystemApi
+@enduml
