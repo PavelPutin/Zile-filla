@@ -4,6 +4,16 @@ title
 Концептуальная диаграмма классов серверной части Zile filla
 end title
 
+package zileFilla {
+    allowmixing
+    class ZileFilla {
+        main(String ... args)
+    }
+    note right of ZileFilla : Точка входа в программу
+
+    rectangle "some-configuration" as Configs
+}
+
 package fileSystemModule {
     class FileSystemController
     note right of FileSystemController : Предоставляет методы взаимодействия\nс файловой системе
@@ -16,8 +26,8 @@ package fileReaderModule {
     class FileReaderController
     note right of FileReaderController: Предоставляет методы для чтения\nсодержимого файлов
 
-    class TxtReaderService
-    note right of TxtReaderService: Предоставляет доступ к файловой системе\nсогласно установленным ограничениям
+    class FileReaderService
+    note right of FileReaderService: Предоставляет доступ к файловой системе\nсогласно установленным ограничениям
 }
 
 package filesystemAccessModule {
@@ -25,8 +35,11 @@ package filesystemAccessModule {
     note right of FileSystemApi: Предоставляет методы\nдля работы с файловой системой
 }
 
-FileSystemController -- FileSystemService
-FileReaderController -- TxtReaderService
-FileSystemService -- FileSystemApi
-TxtReaderService -- FileSystemApi
+ZileFilla ---> FileSystemController 
+ZileFilla ---> FileReaderController  
+ZileFilla -left-> Configs
+FileSystemController --> FileSystemService
+FileReaderController --> FileReaderService
+FileSystemService ---> FileSystemApi
+FileReaderService ---> FileSystemApi
 @enduml
