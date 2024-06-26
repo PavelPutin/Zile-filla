@@ -4,23 +4,23 @@ title
 Концептуальная диаграмма классов серверной части Zile filla
 end title
 
-package controller {
+package fileSystemModule {
     class FileSystemController
     note right of FileSystemController : Предоставляет методы взаимодействия\nс файловой системе
 
-    class FileReaderController
-    note right of FileReaderController: Предоставляет методы для чтения\nсодержимого файлов
-}
-
-package service {
     class FileSystemService
     note right of FileSystemService: Предоставляет доступ к файловой системе\nсогласно установленным ограничениям
+}
+
+package fileReaderModule {
+    class FileReaderController
+    note right of FileReaderController: Предоставляет методы для чтения\nсодержимого файлов
 
     class TxtReaderService
     note right of TxtReaderService: Предоставляет доступ к файловой системе\nсогласно установленным ограничениям
 }
 
-package filesystem_access {
+package filesystemAccessModule {
     class FileSystemApi
     note right of FileSystemApi: Предоставляет методы\nдля работы с файловой системой
 }
