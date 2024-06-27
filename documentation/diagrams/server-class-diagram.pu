@@ -15,23 +15,36 @@ package zileFilla {
 }
 
 package fileSystemModule {
-    class FileSystemController
+    class FileSystemController {
+        changeDirectory(path)
+    }
     note right of FileSystemController : Предоставляет методы взаимодействия\nс файловой системе
 
-    class FileSystemService
+    class FileSystemService {
+        changeDirectory(path)
+    }
     note right of FileSystemService: Предоставляет доступ к файловой системе\nсогласно установленным ограничениям
 }
 
 package fileReaderModule {
-    class FileReaderController
+    class FileReaderController {
+        getFileContent(path)
+    }
     note right of FileReaderController: Предоставляет методы для чтения\nсодержимого файлов
 
-    class FileReaderService
+    class FileReaderService {
+        getFileContent(path)
+    }
     note right of FileReaderService: Предоставляет доступ к файловой системе\nсогласно установленным ограничениям
 }
 
 package filesystemAccessModule {
-    class FileSystemApi
+    class FileSystemApi {
+        getMetaInformation(path)
+        isFile(path)
+        isDirectory(path)
+        
+    }
     note right of FileSystemApi: Предоставляет методы\nдля работы с файловой системой
 }
 
