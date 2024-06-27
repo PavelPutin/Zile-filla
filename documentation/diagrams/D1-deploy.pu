@@ -1,0 +1,22 @@
+@startuml D1-deploy
+title
+Диаграмма развёртывания
+end title
+
+cloud userPC {
+
+}
+
+node server {
+    component nginx as proxy
+    component "Zile Filla backend" as backend
+    component "Zile Filla client" as client
+}
+
+userPC -- proxy : http
+proxy -- backend
+proxy -- client
+
+note bottom of backend : Java21\nSpring boot 3
+note bottom of client : NextJS\nReact\nTypeScript
+@enduml
