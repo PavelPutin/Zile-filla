@@ -1,0 +1,19 @@
+@startuml File metainf class diagram
+title
+Диаграмма классов метаинформации файлов и дириктори
+end title
+
+class File {
+    size
+    created
+    modified
+    opened
+}
+
+class Directory {
+    size : recursive
+    containedFilesAmount
+    containedDirsAmount
+    created
+}
+@enduml
