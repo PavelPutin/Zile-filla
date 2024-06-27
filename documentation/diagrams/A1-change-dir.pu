@@ -1,4 +1,4 @@
-@startuml Change dir activity diagram
+@startuml A1-change-dir
 title
 Диаграмма деятельности изменения текущей директории
 Для класса FileSystemService

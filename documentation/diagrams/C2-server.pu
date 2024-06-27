@@ -1,4 +1,4 @@
-@startuml Server class diagram of Zile filla
+@startuml C2-server
 
 title
 Концептуальная диаграмма классов серверной части Zile filla

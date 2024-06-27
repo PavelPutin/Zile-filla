@@ -1,4 +1,4 @@
-@startuml File metainf class diagram
+@startuml C1-file-metainf
 title
 Диаграмма классов метаинформации файлов и дириктори
 end title

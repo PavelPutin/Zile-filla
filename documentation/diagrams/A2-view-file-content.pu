@@ -1,4 +1,4 @@
-@startuml View file content activity diagram
+@startuml A2-view-file-content
 title
 Диаграмма деятельности просмотра содержимого текстового файла
 Для FileReaderService 
