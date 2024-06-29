@@ -1,6 +1,6 @@
 @startuml A3-delete-file-system-element
 title
-Диаграмма деятельности изменения удаления директории
+Диаграмма деятельности удаления директории
 end title
 
 start
