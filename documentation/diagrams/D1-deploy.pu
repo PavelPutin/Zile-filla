@@ -3,19 +3,22 @@ title
 Диаграмма развёртывания
 end title
 
-cloud userPC {
-
-}
+person user
 
 node server {
-    component nginx as proxy
+    component "nginx  (nginx:1.27.0)" as proxy
     component "Zile Filla backend" as backend
     component "Zile Filla client" as client
+    component "Keycloak\n(quay.io/keycloak/keycloak:25.0.1)" as keycloak
+    database "PostgreSQL\n(postgres:16.3)" as db
 }
 
-userPC -- proxy : http
-proxy -- backend
-proxy -- client
+user --> proxy : uses
+proxy --> client : proxies
+client --> backend : calls api
+client --> keycloak : authenticates
+backend -left-> keycloak : checkes\ntokens
+keycloak --> db : stores\nusers data
 
 note bottom of backend : Java21\nSpring boot 3
 note bottom of client : NextJS\nReact\nTypeScript
