@@ -21,5 +21,5 @@ backend -left-> keycloak : checkes\ntokens
 keycloak --> db : stores\nusers data
 
 note bottom of backend : Java21\nSpring boot 3
-note bottom of client : NextJS\nReact\nTypeScript
+note bottom of client : NextJS\nReact\nTypeScript\nMUI
 @enduml
