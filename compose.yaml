@@ -1,0 +1,24 @@
+---
+services:
+  backend:
+    build: 
+      context: ./zile-filla-backend
+      dockerfile: Dockerfile
+    container_name: backend
+    environment:
+      - EXPOSE_SUBTREE_ROOT=/custom-root
+    ports:
+      - "8080:8080"
+    volumes:
+      - "C:\\custom-root:/custom-root"
+    command: ["mkdir", "/custom-root"]
+  
+  client:
+    build:
+      context: ./zile-filla-web
+      dockerfile: Dockerfile
+    depends_on:
+      - backend
+    container_name: client
+    ports:
+      - "3000:3000"
