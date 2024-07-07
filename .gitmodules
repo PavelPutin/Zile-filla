@@ -2,3 +2,7 @@
 	path = zile-filla-web
 	url = https://github.com/PavelPutin/zile-filla-web.git
 	branch = master
+[submodule "zile-filla-backend"]
+	path = zile-filla-backend
+	url = https://github.com/PavelPutin/zile-filla-backend.git
+	branch = master
