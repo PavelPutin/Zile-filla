@@ -12,6 +12,8 @@ services:
     volumes:
       - "C:\\custom-root:/custom-root"
     command: ["mkdir", "/custom-root"]
+    networks:
+      - zile-filla
   
   client:
     build:
@@ -22,3 +24,8 @@ services:
     container_name: client
     ports:
       - "3000:3000"
+    networks:
+      - zile-filla
+
+networks:
+  zile-filla:
