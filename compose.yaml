@@ -20,5 +20,7 @@ services:
     depends_on:
       - backend
     container_name: client
+    environment:
+      - BACKEND_HOST=backend
     ports:
       - "3000:3000"
