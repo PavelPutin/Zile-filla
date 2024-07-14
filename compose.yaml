@@ -6,12 +6,12 @@ services:
       dockerfile: Dockerfile
     container_name: backend
     environment:
-      - EXPOSE_SUBTREE_ROOT=/custom-root
+      - EXPOSE_SUBTREE_ROOT=${EXPOSE_SUBTREE_ROOT}
     ports:
       - "8080:8080"
     volumes:
-      - "C:\\custom-root:/custom-root"
-    command: ["mkdir", "/custom-root"]
+      - "C:\\custom-root:${EXPOSE_SUBTREE_ROOT}"
+    command: ["mkdir", "${EXPOSE_SUBTREE_ROOT}"]
   
   client:
     build:
